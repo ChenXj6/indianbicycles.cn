@@ -30,10 +30,10 @@ import store from '../store/index.js'
     // 获取localStorage
     function getStorage(language){
         var languageval = window.localStorage.getItem(language);
-        if(languageval==null||languageval== "cn-CN"){
-             return 'cn'
-        }else{
+        if(languageval==null||languageval== "en"){
              return 'en'
+        }else{
+             return 'ja'
         }
     }
 export default {

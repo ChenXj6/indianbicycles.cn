@@ -15,6 +15,7 @@ export default {
 // store中的数据会自动清除，导致每次刷新就丢失所有数据，
 // 所以解决办法就是添加一个监听事件，在页面丢失前存储store中的所有数据，在重新加载后再取出
 created(){
+      window.localStorage.setItem('language','en')
 			//在页面加载时读取sessionStorage里的状态信息
 			// this.$api
 			// 	.Post("site", {
@@ -49,9 +50,8 @@ body{
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  color: #fff;
-   box-sizing: border-box;
+  //text-align: center;
+  box-sizing: border-box;
   width: 100%;
 }
 #app div{
@@ -85,30 +85,30 @@ body{
   padding-left: 50px !important;
 }
 .van-overlay{
-       background-color: rgba(0,0,0,.3) !important;
+//       background-color: rgba(0,0,0,.3) !important;
 }
 .van-tabs--line .van-tabs__wrap {
     height: 55px !important;
 }
 .el-step__head.is-process{
-        color: #108ee9 !important;
-    border-color: #108ee9 !important;
+//    color: #000000 !important;
+//    border-color: #efefef !important;
 }
 .van-nav-bar{
-    background: #0e1526  !important;
+    background: #ffffff  !important;
 }
 .van-nav-bar__title{
-    color: #ffffff !important;
+//    color: #000000 !important;
 }
 .van-nav-bar .van-icon{
-    color: #ffffff !important;
+ //   color: #000000 !important;
 }
 #app .title{
-    color: #ffffff;
-    background: #171c2f !important;
+    color: #000000;
     height: 1rem;
     line-height: 1rem;
     padding: 0 0.2rem;
+    font-weight: 600;
 }
 .box-shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;

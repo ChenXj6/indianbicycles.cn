@@ -108,10 +108,6 @@ export default {
       });
     },
     announce() {
-        // if(this.tasksname==''){
-        //     this.$toast('请输入任务编号')
-        //     return
-        // }
          if(this.needs==''){
             this.$toast(this.$t('m.personalsupplement.supplement12'))
             return

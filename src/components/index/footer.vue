@@ -4,7 +4,7 @@
       <van-tabbar v-model="active">
         <van-tabbar-item name="index" @click="index" icon="home-o">{{$t('m.footer.publictab1')}}</van-tabbar-item>
         <van-tabbar-item name="mytask" @click="mytask" icon="sign">{{$t('m.footer.publictab2')}}</van-tabbar-item>
-        <van-tabbar-item name="setmeal" @click="setmeal" icon="apps-o">{{$t('m.footer.publictab3')}}</van-tabbar-item>
+        <!-- <van-tabbar-item name="setmeal" @click="setmeal" icon="apps-o">{{$t('m.footer.publictab3')}}</van-tabbar-item> -->
         <!-- <van-tabbar-item name="setting" icon="gift-o" @click="yydb">商城</van-tabbar-item> -->
         <van-tabbar-item name="personal" @click="personal" icon="manager-o">{{$t('m.footer.publictab4')}}</van-tabbar-item>
       </van-tabbar>
@@ -34,7 +34,7 @@ export default {
     },
     methods:{
         mytask(){
-			this.$router.push({ name: "mytask",query:{grade:1} });
+			this.$router.push({ name: "mytask"});
             // this.$router.push({name:'mytask'})
         },
         setmeal(){
@@ -49,7 +49,7 @@ export default {
         yydb(){
              let islogin=this.getCookie3("openid") || false;
              if(islogin!=false){
-                location.href=this.host+'/app/index.php?i=4&c=entry&do=index&m=weliam_indiana'
+                location.href=this.host+'/app/index.php?i=4&app=goods&c=entry&do=index&m=weliam_indiana'
              }else{
                 this.$router.push({name:'/'})
              }
@@ -81,10 +81,9 @@ export default {
     margin-bottom: 75px;
 }
 .van-tabbar-item{
-  background-color: #0e1526;
-  color: #fff;
+  background-color: #ffffff;
 }
 .van-tabbar-item--active {
-    color: #1989fa;
+    color: #1a73e7;
 }
 </style>

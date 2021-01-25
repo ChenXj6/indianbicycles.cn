@@ -3,11 +3,11 @@
     <div>
       <van-nav-bar :title="$t('m.Announcement.News')" left-text left-arrow @click-left="onClickLeft" />
     </div>
-    <div class="p20">
+    <div>
       <div class="releaselist" v-for="(item,index) in newlist" :key="index" @click="detail(item.id)">
         <p>{{item.title}}</p>
-        <p v-html="item.detail">
-        </p>
+        <!-- <p v-html="item.detail"> -->
+        <!-- </p> -->
         <!-- <p class="mt2 times">{{item.createtime}}</p> -->
       </div>
     </div>
@@ -45,19 +45,12 @@ export default {
 
 <style lang="less">
 .releaselist {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-.releaselist:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
-}
-.releaselist {
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  background-color: #1e243d;
+  padding: 20px;
+  background: url("../../assets/arrow.png") no-repeat right center;
+  border-bottom: 1px #eeeeee solid;
   > p:nth-child(1) {
-    font-weight: 700;
+    font-size: 0.426667rem;
+    font-weight: 500;
   }
   > p:nth-child(2) {
     margin-top: 20px;
@@ -67,7 +60,7 @@ export default {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-align: justify;
-    color: #5d70bd !important;
+    color: #1a73e7 !important;
   }
   .times{
       color: rgba(0, 0, 0, 0.3);

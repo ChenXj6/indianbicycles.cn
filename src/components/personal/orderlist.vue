@@ -68,7 +68,7 @@
 			   this.onLoad()
 			},
 			saidan_ps(){
-				location.href=`${this.host}/app/index.php?i=4&c=entry&do=myshare&m=weliam_indiana`
+				location.href=`${this.host}/app/index.php?i=4&app=goods&c=entry&do=myshare&m=weliam_indiana`
 			},
 			hack_cainiao(express,expressn){
 				this.$router.push({name:'copys',params:{
@@ -82,7 +82,7 @@
 					message: this.$t('m.order.list13'),
 				}).then(() => {
 					
-					location.href=`${this.host}/app/index.php?i=4&c=entry&op=confirmm&pid=${id}&do=order_get&m=weliam_indiana`
+					location.href=`${this.host}/app/index.php?i=4&app=goods&c=entry&op=confirmm&pid=${id}&do=order_get&m=weliam_indiana`
 						 // this.$api	 
 						 // 	.Get("sureorder", {
 							// 	pid:id
@@ -99,26 +99,23 @@
 			},
 			onLoad() {
 					// 异步更新数据
-					// setTimeout 仅做示例，真实场景中一般为 ajax 请求
-					setTimeout(() => {
-						this.page++;
-						this.$api
-							.Post("order", {
-								status: this.type,
-								page: this.page
-							})
-							.then(res => {
-								if (res.status == 1) {
-									this.finanlist = this.finanlist.concat(res.result.list);
-									// 数据全部加载完成
-									if (res.result.list.length < 10) {
-										this.finished = true;
-									}
-								}
-							});
-						// 加载状态结束
-						this.loading = false;
-					}, 1000);
+          this.page++;
+          this.$api
+            .Post("order", {
+              status: this.type,
+              page: this.page
+            })
+            .then(res => {
+              if (res.status == 1) {
+                this.finanlist = this.finanlist.concat(res.result.list);
+                // 数据全部加载完成
+                if (res.result.list.length < 10) {
+                  this.finished = true;
+                }
+              }
+            });
+          // 加载状态结束
+          this.loading = false;
 				}
 		},
 
@@ -191,8 +188,6 @@
   border-bottom: 1px solid #1e243d;
   padding: 10px;
   .active {
-    color: #57a1ec;
-    background-color: #171c2f;
   }
   > p {
     width: 33%;
@@ -202,7 +197,7 @@
   }
 }
 .meallist .f-jc-sb:nth-child(1){
-  background: #171c2f;
+  background: #e7f0fe;
 }
 
 </style>
